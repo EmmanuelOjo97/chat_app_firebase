@@ -1,0 +1,50 @@
+#login-page {
+  background-color: #dbf2f5;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.login-area {
+  background-color: #15202b;
+  width: 300px;
+  margin: 200px auto;
+  height: 300px;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.google-login {
+  display: inline-block;
+  margin-top: 90px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.login-button {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 7px;
+  border: 0px;
+}
+
+.google {
+  background-color: #1aa260;
+}
+
+.google:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.facebook:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}

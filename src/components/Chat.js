@@ -13,7 +13,6 @@ import "../styles.css";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
-  //   const [messageOrder, setMessageOrder] = useState([]);
 
   useEffect(() => {
     const q = query(

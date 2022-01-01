@@ -14,11 +14,16 @@
   text-align: center;
   border-radius: 20px;
   position: relative;
+  color: white;
+}
+
+.login-area h3 {
+  padding-top: 10px;
 }
 
 .google-login {
   display: inline-block;
-  margin-top: 90px;
+  margin-top: 50px;
   padding-bottom: 30px;
   width: 100%;
 }
@@ -33,6 +38,7 @@
 
 .google {
   background-color: #1aa260;
+  font-weight: bold;
 }
 
 .google:hover {
@@ -42,6 +48,7 @@
 
 .facebook {
   background-color: #3b5998;
+  font-weight: bold;
 }
 
 .facebook:hover {

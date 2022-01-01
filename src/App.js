@@ -10,17 +10,7 @@ function App() {
   const [user] = useAuthState(auth);
   const loggedIn = true;
 
-  return (
-    <div className="App">
-      {/* <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login/>}  />
-        <Route path="/chat" element={<Chat/>}  />
-      </Routes>
-    </BrowserRouter> */}
-      {user ? <Chat /> : <Login />}
-    </div>
-  );
+  return <div className="App">{user ? <Chat /> : <Login />}</div>;
 }
 
 export default App;

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600&display=swap");
+
 #login-page {
   background-color: #dbf2f5;
   position: absolute;
@@ -46,20 +48,100 @@
   transition: 0.5s;
 }
 
-.facebook {
-  background-color: #3b5998;
-  font-weight: bold;
+body {
+  background-color: #fafafa;
+  text-align: center;
 }
 
-.facebook:hover {
-  opacity: 0.5;
-  transition: 0.5s;
+.msg {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 500px;
+  max-height: 650px;
+  margin: 40px auto 10px;
+  overflow: auto;
+  border-radius: 30px;
+  background-color: rgb(207, 207, 209);
 }
 
-.msgsent {
+p {
+  font-weight: 500;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow-wrap: break-word;
+}
+
+.messagesent {
+  padding: 10px;
+  background-color: #395dff;
+  text-align: right;
+  border-radius: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.messagereceived {
+  padding: 10px;
+  text-align: left;
+  border-radius: 30px;
   background-color: green;
+  font-family: "Open Sans", sans-serif;
 }
 
-.msgreceived {
-  background-color: red;
+.imagesent img {
+  width: 40px;
+  float: right;
+  border-radius: 20px;
+}
+
+.imagereceived img {
+  width: 40px;
+  float: left;
+  border-radius: 20px;
+}
+
+textarea {
+  width: 300px;
+  padding: 10px;
+  height: 100px;
+  overflow: auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  border: 0px white;
+}
+
+.send-button {
+  display: block;
+  margin: 10px auto;
+  font-size: 20px;
+  height: 50px;
+  width: 200px;
+  border: 0px;
+  background-color: rgb(90, 192, 90);
+  border-radius: 20px;
+}
+
+.send-button:hover {
+  cursor: pointer;
+  background-color: darkgreen;
+  opacity: 1.5;
+  transition: 0.5s;
+  color: white;
+}
+
+.logout {
+  display: block;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.logout:hover {
+  cursor: pointer;
+  background-color: rgb(134, 9, 9);
+  transition: 0.5s;
+  color: white;
 }

@@ -7,38 +7,20 @@ import {
   orderBy,
   limit,
   query,
-  where,
 } from "firebase/firestore";
 import SendMessage from "./SendMessage";
 import "../styles.css";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
+  //   const [messageOrder, setMessageOrder] = useState([]);
 
   useEffect(() => {
-    // const q = query(collection(db, "messages"), limit(3), (poop) => {
-    //   console.log(poop.docs.map((doc) => doc.data()));
-    // });
-
     const q = query(
       collection(db, "messages"),
       orderBy("timestamp", "desc"),
-      limit(3)
+      limit(50)
     );
-    // const poop = query(collection(db, "messages"), limit(1));
-
-    // onSnapshot(
-    //   collection(db, "messages"),
-    //   orderBy("createdAt"),
-    //   limit(1),
-    //   (snapshot) => {
-    //     console.log(snapshot.docs.map((doc) => doc.data()));
-    //   }
-    // );
-
-    // onSnapshot(q, (snapshot) => {
-    //   console.log(snapshot.docs.map((doc) => doc.data()));
-    // });
 
     const unsub = onSnapshot(q, (snapshot) => {
       setMessages(
@@ -48,40 +30,37 @@ function Chat() {
         }))
       );
     });
-    // console.log(messages[0].uid);
-    // console.log(messages.length);
-    // console.log(messages.reverse());
-    console.log(auth.currentUser.uid);
+
     return () => {
       unsub();
     };
   }, []);
 
-  //   useEffect(() => {
-  //       effect
-  //       return () => {
-  //           cleanup
-  //       }
-  //   }, [input])
-
   return (
     <div>
-      {messages.map(({ text, author, id, photoURL, uid }) => {
-        return (
-          <div
-            key={id}
-            className={`msg${
-              uid == auth.currentUser.uid ? "sent" : "received"
-            }`}
-          >
-            <p>{author}</p>
-            <h1>{text}</h1>
-            <img src={photoURL} alt="" />
-            <p>{uid}</p>
-          </div>
-        );
-      })}
       <Logout />
+      <div className="msg">
+        {messages.map(({ text, id, photoURL, uid }) => {
+          return (
+            <div key={id}>
+              <div
+                className={`image${
+                  uid == auth.currentUser.uid ? "sent" : "received"
+                }`}
+              >
+                <img src={photoURL} alt="" />
+              </div>
+              <p
+                className={`message${
+                  uid == auth.currentUser.uid ? "sent" : "received"
+                }`}
+              >
+                {text}
+              </p>
+            </div>
+          );
+        })}
+      </div>
       <SendMessage />
     </div>
   );

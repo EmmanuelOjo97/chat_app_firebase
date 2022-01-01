@@ -14,13 +14,10 @@ function SendMessage() {
 
   const sendText = async (e) => {
     e.preventDefault();
-    //   const auth = getAuth()
-    //   const user = auth.currentUser
     const { uid, photoURL } = auth.currentUser;
 
     const docRef = await addDoc(collection(db, "messages"), {
       text: message,
-      //   author: "gamers",
       uid,
       photoURL,
       timestamp: serverTimestamp(),
@@ -32,13 +29,18 @@ function SendMessage() {
   return (
     <div>
       <form onSubmit={sendText}>
-        <input
-          type="text"
-          placeholder="Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button type="submit">Send</button>
+        <div className="sendMsg">
+          <textarea
+            cols="30"
+            rows="10"
+            placeholder="Message..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          ></textarea>
+          <button type="submit" className="send-button">
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -18,7 +18,6 @@ function App() {
         <Route path="/chat" element={<Chat/>}  />
       </Routes>
     </BrowserRouter> */}
-      <h1>Hi gamers</h1>
       {user ? <Chat /> : <Login />}
     </div>
   );
